@@ -37,7 +37,7 @@ async def create_category(data: categoryitem = Depends(), category_image: Upload
         return {"status": False, "message": "categosy already Exista"}
         
     else:
-        slug = slugify(data.name)
+        # slug = slugify(data.name)
         # print(slug)
         FILEPATH = "static/images/category/"
 
@@ -66,7 +66,7 @@ async def create_category(data: categoryitem = Depends(), category_image: Upload
             category_image=genrated_name,
             description=data.descripiton,
             name=data.name,
-            slug=slug
+            # slug=slug
         )
 
         return category_obj
